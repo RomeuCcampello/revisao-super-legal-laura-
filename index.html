@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#10243f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>NeuroAtlas P2 · Revisão Interativa</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <button id="menuBtn" class="iconBtn mobileOnly" aria-label="Abrir menu">☰</button>
+    <img src="assets/icon.svg" alt="" class="brandIcon" />
+    <div>
+      <strong>NeuroAtlas P2</strong>
+      <small>Neuroanatomia · revisão interativa</small>
+    </div>
+  </div>
+  <div class="topActions">
+    <button id="searchBtn" class="iconBtn" aria-label="Pesquisar">⌕</button>
+    <button id="themeBtn" class="iconBtn" aria-label="Alternar tema">◐</button>
+    <div class="xpWrap desktopOnly"><div class="xpBar"><span id="xpFill"></span></div></div>
+    <div id="levelPill" class="levelPill">Nível 1 · Observadora · 0 XP</div>
+  </div>
+</header>
+
+<div id="searchPanel" class="searchPanel hidden">
+  <div class="searchBox">
+    <input id="searchInput" type="search" placeholder="Buscar estrutura, sulco, núcleo, nervo..." autocomplete="off" />
+    <button id="searchClose" class="iconBtn" aria-label="Fechar busca">✕</button>
+  </div>
+  <div id="searchResults" class="searchResults"></div>
+</div>
+
+<div id="backdrop" class="backdrop hidden"></div>
+<aside id="sidebar" class="sidebar">
+  <div class="sideProgress">
+    <div class="sideProgressTop"><span>Progresso</span><b id="progressText">0%</b></div>
+    <div class="progressTrack"><span id="progressFill"></span></div>
+  </div>
+  <nav id="nav"></nav>
+</aside>
+
+<main class="main">
+  <section id="content" class="content"></section>
+</main>
+
+<div id="imageModal" class="imageModal hidden" role="dialog" aria-modal="true">
+  <button id="modalClose" class="modalClose" aria-label="Fechar imagem">✕</button>
+  <img id="modalImg" alt="Imagem anatômica ampliada" />
+  <div id="modalCaption" class="modalCaption"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
